@@ -1,4 +1,7 @@
 # dell_me4_array_nagios_check
+
+***CURRENTLY IN TESTING, NOT PRODUCTION READY, USE AT OWN RISK***
+
 Nagios compatable check for Dell ME4 array via API, for use with various monitoring systems that understand nagios status
 
 Some of the code is based on work by user Yogibaer75 found here:
