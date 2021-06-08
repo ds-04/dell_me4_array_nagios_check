@@ -2,7 +2,9 @@
 
 ***CURRENTLY IN TESTING, NOT PRODUCTION READY, USE AT OWN RISK***
 
-Nagios compatable check for Dell ME4 array via API, for use with various monitoring systems that understand nagios status
+Nagios compatible check for Dell ME4 array via API, for use with various monitoring systems that understand nagios status
+
+Developed with the motivation of use with the LibreNMS monitoring system.
 
 Some of the code is based on work by user Yogibaer75 found here:
 https://github.com/Yogibaer75/Check_MK-Things/tree/master/check%20plugins%202.0/dell_powervault_me4
