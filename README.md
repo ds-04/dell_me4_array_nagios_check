@@ -4,3 +4,7 @@ Nagios compatable check for Dell ME4 array via API, for use with various monitor
 Some of the code is based on work by user Yogibaer75 found here:
 https://github.com/Yogibaer75/Check_MK-Things/tree/master/check%20plugins%202.0/dell_powervault_me4
 
+
+To run the script:
+
+./check_dell_me.py   -u ME_array_username   -p ME_array_password   controllerA_ip   controllerB_ip 
