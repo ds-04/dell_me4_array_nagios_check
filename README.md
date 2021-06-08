@@ -6,7 +6,7 @@ Nagios compatible check for Dell ME4 array via API, for use with various monitor
 
 Developed with the motivation of use with the LibreNMS monitoring system.
 
-Some of the code is based on work by user Yogibaer75 found here:
+Some of the code is based on work by user Yogibaer75 (for the CheckMK monitoring system) found here:
 https://github.com/Yogibaer75/Check_MK-Things/tree/master/check%20plugins%202.0/dell_powervault_me4
 
 
