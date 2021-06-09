@@ -2,7 +2,7 @@
 
 ***CURRENTLY IN TESTING, NOT PRODUCTION READY, USE AT OWN RISK***
 
-Nagios compatible check for Dell ME4 array via API, for use with various monitoring systems that understand nagios status
+Nagios compatible check for Dell ME4 storage array via API, for use with various monitoring systems that understand nagios status
 
 Developed with the motivation of use with the LibreNMS monitoring system.
 
