@@ -1,8 +1,8 @@
 def check_me4_system(data):
 
     message_list=[]
-    payload=(data['system'])
-    system_data=(payload['system'])
+    
+    system_data=data
 
     #index on 1
     for i in system_data:
