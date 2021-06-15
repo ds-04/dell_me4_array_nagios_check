@@ -1,11 +1,10 @@
 def check_me4_fans(data):
-   #overall dict -> fans dictionary -> list of all fans -> a fan dictionary
-
-   payload=(data['fans'])
-   fans_data=(payload['fan'])
+   #overall dict -> fans dictionary -> list of all fans -> a fan dictionary .. this is already passed to this function
+   fans_data=data
 
    #create lists
    fans_faulty=[]
+   fans_faulty_numeric=[]
    message_list=[]
    perf_list=[ " RPM: "]
 
@@ -22,19 +21,33 @@ def check_me4_fans(data):
        
    if len(fans_faulty) > 0:
      for k in fans_faulty:
-       message_list.append("Fault - fan has fault: ")
-       message_list.append(k.get("location", "Unknown"))
-       message_list.append(" ")
-       message_list.append(k.get("name"))
-       message_list.append(" | ")
-       status_num=2
+       if k.get("health-numeric") == 1:
+         message_list.append("Degraded - Fan is degraded: ")
+         fans_faulty_numeric.append(1)
+
+       elif k.get("health-numeric") == 2:
+         message_list.append("Fault - fan has fault: ")
+         fans_faulty_numeric.append(2)
+
+       elif k.get("health-numeric") == 3:
+         message_list.append("UNKNOWN - fan is UNKNOWN ")
+         fans_faulty_numeric.append(3)
+
+     message_list.append(k.get("location", "Unknown"))
+     message_list.append(" ")
+     message_list.append(k.get("name", "Unknown"))
+     message_list.append(" | ")
       
    else:
-       perf_data_str=""
-       perf_data_str=(perf_data_str.join([str(element) for element in perf_list]))
-       message_list.append("OK - All fans OK")
-       message_list.append(perf_data_str)
-       status_num=0
+     perf_data_str=""
+     perf_data_str=(perf_data_str.join([str(element) for element in perf_list]))
+     message_list.append("OK - All fans OK")
+     message_list.append(perf_data_str)
+     fans_faulty_numeric.append(0)
+
+
+   #find the most severe numeric status for report, which will be 0 if ok
+   status_num=max(fans_faulty_numeric)
 
    message=""
    message=(message.join(message_list))
