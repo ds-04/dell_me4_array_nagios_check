@@ -22,8 +22,7 @@ def check_me4_disks(data):
 
     if len(disks_faulty) > 0:
      for k in disks_faulty:
-       #print("YEAH HERE") DEBUG
-       disks_faulty_numeric.append(k.get("health-nurmeric"))
+       disks_faulty_numeric.append(k.get("health-numeric"))
        if k.get("health-numeric") == 1:
          message_list.append("Degraded - Disk is degraded: ")
          disks_faulty_numeric.append(1)
