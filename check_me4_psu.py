@@ -1,7 +1,6 @@
 def check_me4_psu(data):
 
-  payload=(data['power-supplies'])
-  power_supply_data=(payload['power-supplies'])
+  power_supply_data=data
 
   PSU1_state=(power_supply_data[0]['health-numeric'])
   PSU2_state=(power_supply_data[1]['health-numeric'])
