@@ -120,16 +120,17 @@ def main(argv=None):
     #create dictionary to contain results from functions (nagios code, message)
     report_dict={}
 
+    #initialise each and only pass to the function what is needed
     report_dict["system"] = []
-    report_dict["system"].append(check_me4_system(ME_array_state_dict))
+    report_dict["system"].append(check_me4_system((ME_array_state_dict['system'])['system']))
     report_dict["controllers"] = []
-    report_dict["controllers"].append(check_me4_controllers(ME_array_state_dict))
+    report_dict["controllers"].append(check_me4_controllers((ME_array_state_dict['controllers'])['controllers']))
     report_dict["disks"] = []
-    report_dict["disks"].append(check_me4_disks(ME_array_state_dict))
+    report_dict["disks"].append(check_me4_disks((ME_array_state_dict['disks'])['drives']))
     report_dict["psu"] = []
-    report_dict["psu"].append(check_me4_psu(ME_array_state_dict))
+    report_dict["psu"].append(check_me4_psu((ME_array_state_dict['power-supplies'])['power-supplies']))
     report_dict["fans"] = []
-    report_dict["fans"].append(check_me4_fans(ME_array_state_dict))
+    report_dict["fans"].append(check_me4_fans((ME_array_state_dict['fans'])['fan']))
 
 
     number_of_faults=0
