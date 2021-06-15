@@ -1,7 +1,6 @@
 def check_me4_controllers(data):
 
-    payload=(data['controllers'])
-    controller_data=(payload['controllers'])
+    controller_data=data
 
     controllerA_state=(controller_data[0]['health-numeric'])
     controllerB_state=(controller_data[1]['health-numeric'])
