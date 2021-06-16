@@ -34,7 +34,7 @@ class test_check_me4_fans(unittest.TestCase):
    def tearDown(self):
        self.testfile.close()
 
-   def test_disks(self):
+   def test_fans(self):
        check_fans_output=check_me4_fans(self.testdata)
        print(check_fans_output)
 
