@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-#D Simpson 2021, ds-04
+#D Simpson 2021 & 2022, ds-04
 
 #Credit to user Yogibaer75 Andreas Doehler
 #<andreas.doehler@bechtle.com/andreas.doehler@gmail.com> who's code upnon which much of this code is based upon.
@@ -132,19 +132,23 @@ def main(argv=None):
     report_dict["fans"] = []
     report_dict["fans"].append(check_me4_fans((ME_array_state_dict['fans'])['fan']))
 
-
+    
     number_of_faults=0
+    fault_code_list=[]
     fault_status_list=[]
-
+    
     for component_type in report_dict.values():
        if (component_type[0][0]) != 0:
          this_components_code=component_type[0][0]
+         fault_code_list.append(this_components_code)
          fault_status_list.append(component_type)
 
-    number_of_faults=len(fault_status_list)
+    number_of_faults=len(fault_code_list)
     if number_of_faults > 0:
-        
-        sys.exit(fault_status_list)
+        max_fault=max(fault_code_list)        
+        print(max_fault)
+        print(fault_status_list)
+        sys.exit(max_fault)
 
     elif number_of_faults == 0:
       #if healthy print system info first and include component with perf data - omit other components
