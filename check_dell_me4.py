@@ -152,6 +152,7 @@ def main(argv=None):
 
     elif number_of_faults == 0:
       #if healthy print system info first and include component with perf data - omit other components
+      print(0)
       print(report_dict["system"])
       print(report_dict["fans"])
     
