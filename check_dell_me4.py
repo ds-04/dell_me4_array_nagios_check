@@ -99,7 +99,7 @@ def main(argv=None):
 
 
     url = "https://" + primary_monitor_IP
-    auth_string = hashlib.md5("{}_{}".format(args.username, args.password).encode("utf-8")).hexdigest()
+    auth_string = hashlib.sha256("{}_{}".format(args.username, args.password).encode("utf-8")).hexdigest()
 
     s = requests.session()
     s.headers.update({"datatype":"json"})
