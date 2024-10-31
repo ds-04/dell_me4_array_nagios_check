@@ -4,6 +4,10 @@
 
 ***CURRENTLY IN TESTING, NOT PRODUCTION READY, USE AT OWN RISK***
 
+---------------
+
+**Now python3. You may need to install python3-requests in your OS.**
+
 Nagios compatible check for Dell ME4 storage array via API, for use with various monitoring systems that understand nagios status
 
 Developed with the motivation of use with the LibreNMS monitoring system.
