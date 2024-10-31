@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 #D Simpson 2021 & 2022, ds-04
 
